@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Student
+@{
+}
+
+    <h1>Create a New Student</h1>
+    <form asp-action="AddStudent" asp-controller="Student" method="post">
+        <div class="form-group">
+            <label for="Name">Id</label>
+            <input type="text" class="form-control" Id="Id" placeholder="Enter Id">
+        </div>
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" Id="Name" placeholder="Enter Name" />
+
+
+
+        </div>
+        <div class="form-group">
+            <label asp-for="Course">Course</label>
+            <select asp-for="Course" asp-items="@Html.GetEnumSelectList(typeof(Course))" placeholder="Enter Course" /> </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="AdmissionDate">Date Enrolled</label>
+            <input asp-for="AdmissionDate" class="form-control" placeholder="Enter Date Enrolled" />
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    </form>
